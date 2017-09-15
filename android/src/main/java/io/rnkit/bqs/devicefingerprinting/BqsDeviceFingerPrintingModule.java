@@ -13,6 +13,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.UiThreadUtil;
 
 public class BqsDeviceFingerPrintingModule extends ReactContextBaseJavaModule implements OnBqsDFListener, OnBqsDFContactsListener, OnBqsDFCallRecordListener {
 
@@ -37,7 +38,7 @@ public class BqsDeviceFingerPrintingModule extends ReactContextBaseJavaModule im
         BqsDF.setOnBqsDFContactsListener(this);
         BqsDF.setOnBqsDFCallRecordListener(this);
 
-        BqsParams bqsParams = new BqsParams();
+        final BqsParams bqsParams = new BqsParams();
         if (args.hasKey("partnerId")) {
             bqsParams.setPartnerId(args.getString("partnerId"));
         } else {
@@ -56,7 +57,12 @@ public class BqsDeviceFingerPrintingModule extends ReactContextBaseJavaModule im
             bqsParams.setGatherSensorInfo(args.getBoolean("isGatherSensorInfo"));
         }
 
-        BqsDF.initialize(this.reactContext.getCurrentActivity(), bqsParams);
+        UiThreadUtil.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                BqsDF.initialize(reactContext.getCurrentActivity(), bqsParams);
+            }
+        });
     }
 
     @ReactMethod
