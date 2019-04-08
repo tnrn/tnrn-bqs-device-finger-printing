@@ -1,17 +1,17 @@
 {
-  "name": "rnkit-bqs-device-finger-printing",
+  "name": "tnrn-bqs-device-finger-printing",
   "description": "BqsDeviceFingerPrinting for react-native",
   "main": "lib/index.js",
-  "author": "SimMan <liwei0990@gmail.com>",
-  "version": "0.0.2",
+  "author": "LaoPan <jianquanpan@sina.com>",
+  "version": "1.0.0",
   "scripts": {
     "test": "npm run test"
   },
-  "homepage": "https://github.com/rnkit/rnkit-bqs-device-finger-printing",
-  "bugs": "https://github.com/rnkit/rnkit-bqs-device-finger-printing/issues",
+  "homepage": "https://github.com/tnrn/tnrn-bqs-device-finger-printing",
+  "bugs": "https://github.com/tnrn/tnrn-bqs-device-finger-printing/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rnkit/rnkit-bqs-device-finger-printing"
+    "url": "https://github.com/tnrn/tnrn-bqs-device-finger-printing"
   },
   "keywords": [
     "react",
@@ -24,8 +24,8 @@
     "device-finger-printing"
   ],
   "peerDependencies": {
-    "react": ">=15.3.1",
-    "react-native": ">=0.28"
+    "react": ">=16.0.0",
+    "react-native": ">=0.55"
   },
   "license": "MIT"
 }
