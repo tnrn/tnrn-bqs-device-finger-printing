@@ -1,5 +1,0 @@
-rootProject.name = 'Example'
-include ':rnkit-bqs-device-finger-printing'
-project(':rnkit-bqs-device-finger-printing').projectDir = new File(rootProject.projectDir, '../node_modules/rnkit-bqs-device-finger-printing/android')
-
-include ':app'
