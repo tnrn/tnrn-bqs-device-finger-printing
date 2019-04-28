@@ -3,7 +3,7 @@
   "description": "BqsDeviceFingerPrinting for react-native",
   "main": "lib/index.js",
   "author": "LaoPan <jianquanpan@sina.com>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "test": "npm run test"
   },
