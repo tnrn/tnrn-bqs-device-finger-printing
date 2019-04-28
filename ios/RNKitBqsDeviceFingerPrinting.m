@@ -6,10 +6,18 @@
 //  Copyright © 2017年 RNKit.io. All rights reserved.
 //
 
-#import "RNKitBqsDeviceFingerPrinting.h"
+#if __has_include(<React/RCTBridge.h>)
+#import <React/RCTBridgeModule.h>
+#import <React/RCTRootView.h>
+#else
+#import "RCTBridgeModule.h"
+#import "RCTRootView.h"
+#endif
+
 #import "BqsDeviceFingerPrinting.h"
 
-@interface RNKitBqsDeviceFingerPrinting() <BqsDeviceFingerPrintingDelegate, BqsDeviceFingerPrintingContactsDelegate>
+
+@interface RNKitBqsDeviceFingerPrinting: NSObject <RCTBridgeModule, BqsDeviceFingerPrintingDelegate, BqsDeviceFingerPrintingContactsDelegate>
 
 @end
 
